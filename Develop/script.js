@@ -46,18 +46,28 @@ function generatePassword() {
   var possChar = "";                // Sets the possible characters based off the password length
   var createdPassword = "";         // Sets the randomly generated password
 
-    // Set all booleans to false
-    var lowerBoolean = upperBoolean = numericBoolean = specialBoolean = false;
+  // While loop to validate user input. Checks if user hits cancel or if a number out of range is chosen
+  while (passwordLength < 8 || passwordLength > 128) {
+    passwordLength = prompt("Please choose a length from 8 to 128 characters for your password.");
+    if (passwordLength === null) {
+      return "User has selected Cancel.";
+    } else if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
+       return "Password must be between 8-128 characters. Please try again."
+    } else passwordLength = parseInt(passwordLength);
+  }
+  
+  // Set all booleans to false
+  var lowerBoolean = upperBoolean = numericBoolean = specialBoolean = false;
 
-    // if statement to check and make sure at least one value is selected
-    if (lowerBoolean === false && upperBoolean === false && numericBoolean === false && specialBoolean === false) {
-      var lowerBoolean = confirm("Do you want your password to contain a lowercase character? Press 'OK' for yes or 'Cancel' for no");
-      var upperBoolean = confirm("Do you want your password to contain a uppercase character? Press 'OK' for yes or 'Cancel' for no");
-      var numericBoolean = confirm("Do you want your password to contain a numerical character? Press 'OK' for yes or 'Cancel' for no");
-      var specialBoolean = confirm("Do you want your password to contain a special character? Press 'OK' for yes or 'Cancel' for no");
-    }
+  // if statement to check and make sure at least one value is selected
+  if (lowerBoolean === false && upperBoolean === false && numericBoolean === false && specialBoolean === false) {
+    var lowerBoolean = confirm("Do you want your password to contain a lowercase character? Press 'OK' for yes or 'Cancel' for no");
+    var upperBoolean = confirm("Do you want your password to contain a uppercase character? Press 'OK' for yes or 'Cancel' for no");
+    var numericBoolean = confirm("Do you want your password to contain a numerical character? Press 'OK' for yes or 'Cancel' for no");
+    var specialBoolean = confirm("Do you want your password to contain a special character? Press 'OK' for yes or 'Cancel' for no");
+  }
 
-      // if statemnents to verify possible characters chosen based off user inputs
+  // if statemnents to verify possible characters chosen based off user inputs
   if (lowerBoolean && upperBoolean && numericBoolean && specialBoolean) {
     possChar += lowerString.concat(upperString, numericString, specialString);
   } else if (lowerBoolean && upperBoolean && numericBoolean && !specialBoolean) {
@@ -87,8 +97,13 @@ function generatePassword() {
   } else if (!lowerBoolean && !upperBoolean && !numericBoolean && specialBoolean) {
     possChar += specialString.concat();
   } else if (!lowerBoolean && !upperBoolean && !numericBoolean && !specialBoolean) {
-    return "You must select at least one character to generate your password. Please try again."
+  return "You must select at least one character to generate your password. Please try again."
   }
 
-      return createdPassword;
+  // for loop to randomly choose the characters that generates the password
+  for (let i = 0; i < passwordLength; i++) {
+    createdPassword += possChar[Math.floor(Math.random() * possChar.length)]
+  }
+
+  return createdPassword;
 }
