@@ -39,5 +39,11 @@ var upperString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numericString = "1234567890";
 var specialString = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 
+// Creating function generatePassword
+function generatePassword() {
 
-
+  var passwordLength = "";          // Sets the length of the password
+  var possChar = "";                // Sets the possible characters based off the password length
+  var createdPassword = "";         // Sets the randomly generated password
+  
+}
