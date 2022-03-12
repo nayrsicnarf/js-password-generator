@@ -57,37 +57,38 @@ function generatePassword() {
       var specialBoolean = confirm("Do you want your password to contain a special character? Press 'OK' for yes or 'Cancel' for no");
     }
 
-    if (lowerBoolean && upperBoolean && numericBoolean && specialBoolean) {
-      return createPass(lowerString, upperString, numericString, specialString);
-      } else if (lowerBoolean && upperBoolean && numericBoolean) {
-      return createPass(lowerString, upperString, numericString);
-      } else if (lowerBoolean && upperBoolean && specialBoolean) {
-      return createPass(lowerString, upperString, specialString);
-      } else if (lowerBoolean && numericBoolean && specialBoolean) {
-      return createPass(lowerString, numericString, specialString);
-      } else if (lowerBoolean && upperBoolean) {
-      return createPass(lowerString, upperString);
-      } else if (lowerBoolean && numericBoolean) {
-      return createPass(lowerString, numericString);
-      } else if (lowerBoolean && specialBoolean) {
-      return createPass(lowerString, specialString);
-      } else if (upperBoolean && numericBoolean && specialBoolean) {
-      return createPass(upperString, numericString, specialString);
-      } else if (upperBoolean && numericBoolean) {
-      return createPass(upperString, numericString);
-      } else if (upperBoolean && specialBoolean) {
-      return createPass(upperString, specialString);
-      } else if (upperBoolean) {
-      return createPass(upperString);
-      } else if (numericBoolean && specialBoolean) {
-      return createPass(numericString, specialString);
-      } else if (numericBoolean) {
-      return createPass(numericString);
-      } else if (specialBoolean) {
-      return createPass(specialString);
-      } else if (lowerBoolean) {
-      return createPass(lowerString);
-      }
+      // if statemnents to verify possible characters chosen based off user inputs
+  if (lowerBoolean && upperBoolean && numericBoolean && specialBoolean) {
+    possChar += lowerString.concat(upperString, numericString, specialString);
+  } else if (lowerBoolean && upperBoolean && numericBoolean && !specialBoolean) {
+    possChar += lowerString.concat(upperString, numericString);
+  } else if (lowerBoolean && upperBoolean && !numericBoolean && specialBoolean) {
+    possChar += lowerString.concat(upperString, specialString);
+  } else if (lowerBoolean && upperBoolean && !numericBoolean && !specialBoolean) {
+    possChar += lowerString.concat(upperString);
+  } else if (lowerBoolean && !upperBoolean && numericBoolean && specialBoolean) {
+    possChar += lowerString.concat(numericString, specialString);
+  } else if (lowerBoolean && !upperBoolean && numericBoolean && !specialBoolean) {
+    possChar += lowerString.concat(numericString);
+  } else if (lowerBoolean && !upperBoolean && !numericBoolean && !specialBoolean) {
+    possChar += lowerString.concat();
+  } else if (!lowerBoolean && upperBoolean && numericBoolean && specialBoolean) {
+    possChar += upperString.concat(numericString, specialString);
+  } else if (!lowerBoolean && upperBoolean && numericBoolean && !specialBoolean) {
+    possChar += upperString.concat(numericString);
+  } else if (!lowerBoolean && upperBoolean && !numericBoolean && specialBoolean) {
+    possChar += upperString.concat(specialString);
+  } else if (!lowerBoolean && upperBoolean && !numericBoolean && !specialBoolean) {
+    possChar += upperString.concat();
+  } else if (!lowerBoolean && !upperBoolean && numericBoolean && specialBoolean) {
+    possChar += numericString.concat(specialString);
+  } else if (!lowerBoolean && !upperBoolean && numericBoolean && !specialBoolean) {
+    possChar += numericString.concat();
+  } else if (!lowerBoolean && !upperBoolean && !numericBoolean && specialBoolean) {
+    possChar += specialString.concat();
+  } else if (!lowerBoolean && !upperBoolean && !numericBoolean && !specialBoolean) {
+    return "You must select at least one character to generate your password. Please try again."
+  }
 
       return createdPassword;
 }
