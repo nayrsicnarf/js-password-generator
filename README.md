@@ -12,15 +12,22 @@
 
 ## Description
 
-I was given a starter code and was tasked with modifying the code to make it follow accessibilty standards. This would ensure that individuals with disabilities can access a website using assistive technologies like video captions, screen readers, and braille keyboards.
+In this assignment, I was tasked into creating a password generator using JavaScript. In this application, the user is prompted to input the desired amount of chracters they want in their password based off the given parameters. If in the event that the user chooses a value outside of the given parameters, the user is receives a prompt to choose a number within the parameters and try again. Once that value is chosen, the user is prompted to choose which of the following character types they want in their password:
 
-This code was also modified to include semantic elements which helps people and the browsers distinguish the difference between the sections of a web page. This allows the contents of the web page to be more sustainable and more useful into the future. Some examples of semantic elements are `<header>`, `<footer>`, or `<section>`.
+- Lowercase Characters
+- Uppercase Characters
+- Numeric Characters
+- Special Characters
+
+If the user does not choose at least one of the four character types, they are told to try again. After the desired character types have been chosen, a random psssowrd is generated and displayed on the screen for the user to see.
+
+This assignment was our introduction to JavaScript. I did not modify the HTML or the CSS files in order to accomplish this assignment. I became familiar with methods such as `<.concat>` which is a method to merge two or more arrays. Some functinos that I became familiar with are `<Math.floor>` and `<Math.random>`. The former returns a number that's rounded down to its closest integer. The latter returns a floating-point, pseudo-random number in the range 0 to less than 1, which is what allows us to randomly select a character in each desired character type.
 
 ## GitHub Repository and Page
 
-- [GitHub Repository](https://github.com/nayrsicnarf/Semantic_Markup_HW1.git)
+- [GitHub Repository](https://github.com/nayrsicnarf/js-password-generator.git)
 
-- [GitHub Page](https://nayrsicnarf.github.io/Semantic_Markup_HW1/)
+- [GitHub Page](https://nayrsicnarf.github.io/js-password-generator/)
 
 ## Technologies
 
@@ -30,7 +37,7 @@ This code was also modified to include semantic elements which helps people and 
 
 ## Installation
 
-To view this webpage on a local machine, pull the code from [GitHub](https://github.com/nayrsicnarf/Semantic_Markup_HW1.git) using Terminal (Mac) or Git (Windows) and use the following (or similar) programs:
+To view this webpage on a local machine, pull the code from [GitHub](https://github.com/nayrsicnarf/js-password-generator.git) using Terminal (Mac) or Git (Windows) and use the following (or similar) programs:
 
 - Operating System: macOS Monterey Version 21.1
 - Visual Studio Code: Version 1.64.2
@@ -39,7 +46,7 @@ To view this webpage on a local machine, pull the code from [GitHub](https://git
 
 ## Usage
 
-To view the completed project, visit my [GitHub Page](https://nayrsicnarf.github.io/Semantic_Markup_HW1/) or refer to the [Installation](#installation) section of this README.
+To view the completed project, visit my [GitHub Page](https://nayrsicnarf.github.io/js-password-generator/) or refer to the [Installation](#installation) section of this README.
 
 ## Screenshot
 
@@ -47,9 +54,9 @@ To view the completed project, visit my [GitHub Page](https://nayrsicnarf.github
 
 ## Credits
 
-This was the first homework assignment as part of the [University of Washington Coding Boot Camp](https://bootcamp.uw.edu/coding/). Some of the information used to complete this project was provided by the instructors of this Boot Camp. But other information were obtained, but not limited to, through the following resources:
+This was the third homework assignment as part of the [University of Washington Coding Boot Camp](https://bootcamp.uw.edu/coding/). Some of the information used to complete this project was provided by the instructors of this Boot Camp. But other information were obtained, but not limited to, through the following resources:
 
 - [Google](https://www.google.com/)
 - [W3Schools Online Web Tutorials](https://www.w3schools.com/)
-- [A Guide to Creating a README File](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
-- [HTML Symantic Elements](https://www.w3schools.com/html/html5_semantic_elements.asp)
+- [JavaScript Tutorial](hhttps://www.javascripttutorial.net/)
+- [MDN Web Docs](hhttps://developer.mozilla.org/en-US/docs/Web/JavaScript)
